@@ -3,7 +3,7 @@
 function encodeCharacter(char, key) {
   const hexCode = char.charCodeAt(0);
   const hexDiff = hexCode - 32;
-  const shiftedHexDiff = (hexDiff + key) % 95;
+  const shiftedHexDiff = (hexDiff + (key % 95) + 95) % 95;
   const shiftedHexCode = shiftedHexDiff + 32;
   return String.fromCharCode(shiftedHexCode);
 }

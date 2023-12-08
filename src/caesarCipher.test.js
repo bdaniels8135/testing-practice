@@ -40,3 +40,25 @@ it("wraps back to start of alphabet from the end", () => {
 it("encodes a multi character string with a positive key", () => {
   expect(caesarCipher("abc", 2)).toBe("cde");
 });
+
+it("encodes a single character with a negative key", () => {
+  expect(caesarCipher("c", -2)).toBe("a");
+});
+
+it("wraps from start to end of alphabet with a negative key", () => {
+  expect(caesarCipher(" ", -1)).toBe("~");
+});
+
+it("decodes itself with negative of the key", () => {
+  expect(caesarCipher(caesarCipher("Hello, World!", 10), -10)).toBe(
+    "Hello, World!"
+  );
+});
+
+it("can handle keys above 200", () => {
+  expect(caesarCipher("a", 285)).toBe("a");
+});
+
+it("can handle keys below -200", () => {
+  expect(caesarCipher("f", -285)).toBe("f");
+});
