@@ -22,3 +22,7 @@ it("returns an error with empty argument", () => {
 it("returns only the first letter capitalized", () => {
   expect(capitalize("ABC")).toBe("Abc");
 });
+
+it("returns an empty string when passed one", () => {
+  expect(capitalize("")).toBe("");
+});
