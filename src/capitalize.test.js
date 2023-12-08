@@ -19,8 +19,8 @@ it("returns an error with empty argument", () => {
   expect(capitalizeEmpty).toThrow("Capitalize requires a string argument");
 });
 
-it("returns only the first letter capitalized", () => {
-  expect(capitalize("ABC")).toBe("Abc");
+it("changes only the first character if needed", () => {
+  expect(capitalize("aBc def")).toBe("ABc def");
 });
 
 it("returns an empty string when passed one", () => {
