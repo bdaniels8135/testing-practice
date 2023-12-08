@@ -33,6 +33,13 @@ it("throws an error with too few or too many arguments in sum", () => {
   expect(threeSumArguments).toThrow("sum takes two numeric arguments");
 });
 
+it("throws an error when sum arguments are not numbers", () => {
+  function nonNumberSumArguments() {
+    calculator().sum("a", "b");
+  }
+  expect(nonNumberSumArguments).toThrow("sum takes two numeric arguments");
+});
+
 // Subtract Tests
 it("subtracts two pos numbers correctly", () => {
   expect(calculator().subtract(5, 7)).toBe(-2);
@@ -64,6 +71,15 @@ it("throws an error with too few or too many arguments in subtract", () => {
   expect(noSubtractArguments).toThrow("subtract takes two numeric arguments");
   expect(oneSubtractArgument).toThrow("subtract takes two numeric arguments");
   expect(threeSubtractArguments).toThrow(
+    "subtract takes two numeric arguments"
+  );
+});
+
+it("throws an error when subtract arguments are not numbers", () => {
+  function nonNumberSubtractArguments() {
+    calculator().subtract("a", "b");
+  }
+  expect(nonNumberSubtractArguments).toThrow(
     "subtract takes two numeric arguments"
   );
 });
@@ -104,6 +120,15 @@ it("throws an error with too few or too many arguments in divide", () => {
   expect(threeDivideArguments).toThrow("divide takes two numeric arguments");
 });
 
+it("throws an error when divide arguments are not numbers", () => {
+  function nonNumberDivideArguments() {
+    calculator().divide("a", "b");
+  }
+  expect(nonNumberDivideArguments).toThrow(
+    "divide takes two numeric arguments"
+  );
+});
+
 // Multiply Tests
 it("multiplies two pos numbers correctly", () => {
   expect(calculator().multiply(5, 7)).toBe(35);
@@ -135,6 +160,15 @@ it("throws an error with too few or too many arguments in multiply", () => {
   expect(noMultiplyArguments).toThrow("multiply takes two numeric arguments");
   expect(oneMultiplyArgument).toThrow("multiply takes two numeric arguments");
   expect(threeMultiplyArguments).toThrow(
+    "multiply takes two numeric arguments"
+  );
+});
+
+it("throws an error when multiply arguments are not numbers", () => {
+  function nonNumberMultiplyArguments() {
+    calculator().multiply("a", "b");
+  }
+  expect(nonNumberMultiplyArguments).toThrow(
     "multiply takes two numeric arguments"
   );
 });
