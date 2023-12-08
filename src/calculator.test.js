@@ -89,17 +89,52 @@ it("throws an error when dividing by zero", () => {
 });
 
 it("throws an error with too few or too many arguments in divide", () => {
-  function noSubtractArguments() {
+  function noDivideArguments() {
     calculator().divide();
   }
-  function oneSubtractArgument() {
+  function oneDivideArgument() {
     calculator().divide(1);
   }
 
-  function threeSubtractArguments() {
+  function threeDivideArguments() {
     calculator().divide(1, 2, 3);
   }
-  expect(noSubtractArguments).toThrow("divide takes two numeric arguments");
-  expect(oneSubtractArgument).toThrow("divide takes two numeric arguments");
-  expect(threeSubtractArguments).toThrow("divide takes two numeric arguments");
+  expect(noDivideArguments).toThrow("divide takes two numeric arguments");
+  expect(oneDivideArgument).toThrow("divide takes two numeric arguments");
+  expect(threeDivideArguments).toThrow("divide takes two numeric arguments");
+});
+
+// Multiply Tests
+it("multiplies two pos numbers correctly", () => {
+  expect(calculator().multiply(5, 7)).toBe(35);
+});
+
+it("multiplies two neg numbers correctly", () => {
+  expect(calculator().multiply(-5, -8)).toBe(40);
+});
+
+it("multiplies a pos and neg number correctly", () => {
+  expect(calculator().multiply(-5, 7)).toBe(-35);
+});
+
+it("multiplies two floats correctly", () => {
+  expect(calculator().multiply(0.7, 0.333)).toBeCloseTo(0.2331);
+});
+
+it("throws an error with too few or too many arguments in multiply", () => {
+  function noMultiplyArguments() {
+    calculator().multiply();
+  }
+  function oneMultiplyArgument() {
+    calculator().multiply(1);
+  }
+
+  function threeMultiplyArguments() {
+    calculator().multiply(1, 2, 3);
+  }
+  expect(noMultiplyArguments).toThrow("multiply takes two numeric arguments");
+  expect(oneMultiplyArgument).toThrow("multiply takes two numeric arguments");
+  expect(threeMultiplyArguments).toThrow(
+    "multiply takes two numeric arguments"
+  );
 });

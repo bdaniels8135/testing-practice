@@ -17,7 +17,14 @@ function calculator() {
     if (b === 0) throw new Error("cannot divide by zero");
     return a / b;
   }
-  return { sum, subtract, divide };
+
+  function multiply(a, b) {
+    if (arguments.length !== 2)
+      throw new Error("multiply takes two numeric arguments");
+    return a * b;
+  }
+
+  return { sum, subtract, divide, multiply };
 }
 
 module.exports = calculator;
